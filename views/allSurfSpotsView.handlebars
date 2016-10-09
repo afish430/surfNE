@@ -1,0 +1,44 @@
+<script type="text/javascript" src="/javascripts/allSurfSpotsMap.js"></script>
+
+<div>
+
+	<p class="intro">SurfNE is your one stop shop for all things surfing-related in New England. Click a surf spot on the map or table below to get forecasts, conditions, and all the other info you need for a day on the waves.</p>
+
+	<div id="allSurfSpotsMap"></div>
+
+	<div class="table-responsive">
+
+		<table class="table editTable">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Location</th>
+					{{#if isAdmin}}
+					<th></th>
+					<th></th>
+					{{/if}}
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+					<tr>
+						<td><a href="/surfspots/info/{{this.id}}">{{this.name}}</a></td>
+						<td>{{this.location}}</td>
+						{{#if ../isAdmin}}
+							<td><a href="/surfspots/edit/{{this.id}}">Edit</a></td>
+							<td><a href="/surfspots/delete/{{this.id}}">Delete</a></td>
+						{{/if}}
+					</tr>
+				{{/each}}
+			</tbody>
+			{{#if isAdmin}}
+			<tfooter>
+				<tr><td>
+				<button class="btn btn-success" onClick="addSurfSpot();">Add a New Spot</button>
+				</td></tr>
+			</tfooter>
+			{{/if}}
+		</table>
+
+	</div>
+</div>

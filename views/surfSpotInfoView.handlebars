@@ -1,0 +1,117 @@
+<script type="text/javascript">
+  var spotLatitude = {{data.latitude}};
+  var spotLongitude = {{data.longitude}};
+  var msw_id = {{data.msw_id}};
+</script>
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+<script type="text/javascript" src="/javascripts/surfSpotMap.js"></script>
+
+<div id="surfSpotMap"></div>
+
+<div class="table-responsive">
+
+    <table class="table editTable">
+      <tbody>
+
+        <tr>
+          <th width="200">Name: </th>
+          <td>{{data.name}}</td>
+        </tr>
+        <tr>
+          <th>Town: </th>
+          <td>{{data.town}}, {{data.state}}</td>
+        </tr>
+        <tr>
+          <th>Coordinates: </th>
+          <td>{{data.latitude}}, {{data.longitude}}</td>
+        </tr>
+        <tr>
+          <th>Description: </th>
+          <td>{{data.description}}</td>
+        </tr>
+        <tr>
+          <th>More Info: </th>
+          <td><a href="{{data.infoLink}}" target="blank">{{data.infoLink}}</a></td>
+        </tr>
+        {{#if data.surfShopLink}}
+        <tr>
+          <th>Surf Shop: </th>
+          <td><a href="{{data.surfShopLink}}" target="blank">{{data.surfShopLink}}</a></td>
+        </tr>
+        {{/if}}
+        <tr>
+          <th>Surf Reports: </th>
+          <td>
+            <ul style="list-style: none;">
+              {{#if data.surflineLink}}<li><a href="{{data.surflineLink}}" target="blank">Surfline</a></li>{{/if}}
+              {{#if data.mswLink}}<li><a href="{{data.mswLink}}" target="blank">Magic Seaweed</a></li>{{/if}}
+              {{#if data.swellInfoLink}}<li><a href="{{data.swellInfoLink}}" target="blank">SwellInfo</a></li>{{/if}}
+          </ul>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+<div class="comments-container">
+  
+  <div class="row top-row"> 
+    <h2>Comments</h2>
+    <p>Use this space to comment on your experiences at this surf spot, plan to meet up here, or share your surfing pics.</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4 leave-comment">
+      {{#if user}}
+        <form method="post" action="/comments" enctype="multipart/form-data">
+          <label for="comment">Leave a Comment</label>
+          <textarea name="comment" required placeholder="Tell us your thoughts..."></textarea>
+          <input type="hidden" name="spotId" value="{{data.id}}">
+          <label id="addImageLabel" for="photo">Include an Image:</label>
+          <input type="file" id="fileInput" name="photo" accept="image/*" id="sufPhoto"/>
+          <input type="submit" value="Post Comment" class="btn btn-success" id="btnPostComment">
+        </form>
+      {{else}}
+       <p>You must sign in to Comment</p>
+       <a href="/login" class="btn btn-success" id="btnLogin">Log In Here</a>
+      {{/if}}
+    </div>
+
+    <div class="col-sm-8 comments-div">
+      
+      {{#if data.hasComments}}
+        <table class="table commentsTable .table-striped">
+          <tbody>
+            {{#each data.comments}}
+              <tr>
+                <td width="120" class="user-td">
+                  <span class="user">{{this.userName}}:</span><br>
+                  <span class="date">{{this.dateString}}</span>
+                  <span class="date">{{this.timeString}}</span>
+                </td>
+                <td>
+                  <span class="comment">{{this.text}}</span>
+                  {{#if this.imagePath}}
+                    <br><img src="{{this.imagePath}}">
+                  {{/if}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <h4 class="no-comments">There are no comments yet</h4>
+      {{/if}}
+    </div>
+
+  </div>
+
+</div>
+
+<p>
+    <a class="back-to-main" href="/">Back to Main Page</a>
+</p>

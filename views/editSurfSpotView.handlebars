@@ -1,0 +1,72 @@
+<div class="table-responsive">
+
+  <form method="post" action='/surfspots/edit/{{data.id}}'>
+
+    <table class="table editTable">
+      <tbody>
+
+        <tr>
+          <th width="175">Name: </th>
+          <td><input type="text" name="name" required value="{{data.name}}"></td>
+        </tr>
+        <tr>
+          <th>Town: </th>
+          <td><input type="text" name="town" required value="{{data.town}}"></td>
+        </tr>
+        <tr>
+          <th>State: </th>
+          <td><input type="text" name="state" required value="{{data.state}}"></td>
+        </tr>
+        <tr>
+          <th>Latitude: </th>
+          <td><input type="text" name="latitude" required value="{{data.latitude}}"></td>
+        </tr>
+        <tr>
+          <th>Longitude: </th>
+          <td><input type="text" name="longitude" required value="{{data.longitude}}"></td>
+        </tr>
+        <tr>
+          <th>Description: </th>
+          <td><textarea type="text" name="description" required value="{{data.description}}">{{data.description}}</textarea></td>
+        </tr>
+        <tr>
+          <th>Info Link: </th>
+          <td><input type="text" name="infoLink" required value="{{data.infoLink}}"></td>
+        </tr>
+        <tr>
+          <th>Surf Shop Link: </th>
+          <td><input type="text" name="surfShopLink" value="{{data.surfShopLink}}"></td>
+        </tr>
+        <tr>
+          <th>Surfline Link: </th>
+          <td><input type="text" name="surflineLink" value="{{data.surflineLink}}"></td>
+        </tr>
+        <tr>
+          <th>Magic Seaweed Link: </th>
+          <td><input type="text" name="mswLink" value="{{data.mswLink}}"></td>
+        </tr>
+        <tr>
+          <th>SwellInfo Link: </th>
+          <td><input type="text" name="swellInfoLink" value="{{data.swellInfoLink}}"></td>
+        </tr>
+        <tr>
+          <th>MSW ID: </th>
+          <td><input type="text" name="msw_id" required value="{{data.msw_id}}"></td>
+        </tr>
+      </tbody>
+
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="Save" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-default" class="cancel" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+
+    </table>
+
+  </form>
+
+</div>

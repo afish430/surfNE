@@ -1,0 +1,34 @@
+ <div class="table-responsive">
+
+  <form method="post" action="/login">
+
+    <table class="table smallTable" id="loginTable">
+
+      <tbody>
+       <tr>
+        <th width="150">User Name: </th>
+        <td><input type="text" name="userName" required></td>
+       </tr>
+        <tr>
+          <th>Password: </th>
+          <td><input type="password" name="password" required></td>
+        </tr>
+      </tbody>
+
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+           <input type="submit" value="Login" class="btn btn-success">
+           <input type="button" value="Cancel" class="btn btn-default" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+
+    </table>
+
+    <p class="error-message">{{data.errorMessage}}</p>
+
+  </form>
+
+</div>
