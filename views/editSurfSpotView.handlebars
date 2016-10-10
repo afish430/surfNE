@@ -19,11 +19,11 @@
         </tr>
         <tr>
           <th>Latitude: </th>
-          <td><input type="text" name="latitude" required value="{{data.latitude}}"></td>
+          <td><input type="number" step="any" name="latitude" min="40" max="50" required value="{{data.latitude}}"></td>
         </tr>
         <tr>
           <th>Longitude: </th>
-          <td><input type="text" name="longitude" required value="{{data.longitude}}"></td>
+          <td><input type="number" step="any" name="longitude" min="-75" max="-65" required value="{{data.longitude}}"></td>
         </tr>
         <tr>
           <th>Description: </th>
@@ -51,7 +51,7 @@
         </tr>
         <tr>
           <th>MSW ID: </th>
-          <td><input type="text" name="msw_id" required value="{{data.msw_id}}"></td>
+          <td><input type="number" name="msw_id" min="0" max="9999" required value="{{data.msw_id}}"></td>
         </tr>
       </tbody>
 
@@ -66,6 +66,8 @@
       </tfooter>
 
     </table>
+
+    <p class="error-message">{{data.errorMessage}}</p>
 
   </form>
 

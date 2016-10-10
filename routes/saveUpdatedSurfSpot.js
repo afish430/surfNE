@@ -15,8 +15,6 @@ module.exports =
       if (!surfSpot){
         return res.render('404');
       }  
-
-      //add validation
       
       surfSpot.name = req.body.name;
       surfSpot.town = req.body.town;
@@ -34,6 +32,26 @@ module.exports =
       surfSpot.save(function (err) {
           if (err){
             console.log("Error updating : %s ".red, err );
+            res.render('addSurfSpotView',
+            {
+              title:"Edit Surf Spot", 
+              data: {
+                      errorMessage: "An error occurred and your surf spot could not be saved",
+                      id: surfSpot._id,
+                      name: surfSpot.name,
+                      town: surfSpot.town,
+                      state: surfSpot.state,
+                      latitude: surfSpot.latitude,
+                      longitude: surfSpot.longitude,
+                      description: surfSpot.description,
+                      infoLink: surfSpot.infoLink,
+                      surfShopLink: surfSpot.surfShopLink,
+                      surflineLink: surfSpot.surflineLink,
+                      mswLink: surfSpot.mswLink,
+                      swellInfoLink: surfSpot.swellInfoLink,
+                      msw_id: surfSpot.msw_id
+                    }
+            }); 
           }
             
           console.log("Updated surf spot %s saved".cyan, surfSpot.name);

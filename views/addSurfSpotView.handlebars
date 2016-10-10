@@ -19,11 +19,11 @@
         </tr>
         <tr>
           <th>Latitude: </th>
-          <td><input type="text" name="latitude" required required placeholder="ex. 44.773"></td>
+          <td><input type="number" step="any" name="latitude" min="40" max="50" required placeholder="ex. 44.7793"></td>
         </tr>
         <tr>
           <th>Longitude: </th>
-          <td><input type="text" name="longitude" required placeholder="ex. -71.534"></td>
+          <td><input type="number" step="any" name="longitude" min="-75" max="-65" required placeholder="ex. -71.5354"></td>
         </tr>
         <tr>
           <th>Description: </th>
@@ -51,7 +51,7 @@
         </tr>
         <tr>
           <th>MSW ID: </th>
-          <td><input type="text" name="msw_id" required placeholder="MagicSeaweed API spot ID"></td>
+          <td><input type="number" name="msw_id" min="0" max="9999" required placeholder="MagicSeaweed API spot ID"></td>
         </tr>
       </tbody>
 
@@ -66,6 +66,8 @@
       </tfooter>
 
     </table>
+
+    <p class="error-message">{{data.errorMessage}}</p>
 
   </form>
 

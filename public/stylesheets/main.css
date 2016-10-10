@@ -63,7 +63,7 @@ p.intro {
     font-style: italic;
 }
 
-.editTable input[type="text"], .editTable input[type="password"], .editTable textarea {
+.editTable input[type="text"], .editTable input[type="password"], .editTable input[type="number"], .editTable textarea {
 	width: 525px;
 	color: #000;
 	padding-left: 5px;

@@ -5,8 +5,6 @@ var SurfSpot = DB.getSurfSpotModel();
 module.exports = 
   function saveNewSurfSpot(req , res , next){
 
-    //add validation
-
     var surfSpot = new SurfSpot({
         name: req.body.name,
         town: req.body.town,
@@ -25,6 +23,13 @@ module.exports =
     surfSpot.save(function (err){
       if(err) {
         console.log("Error : %s ".red,err);
+        res.render('addSurfSpotView',
+          {
+            title:"Add a New Surf Spot", 
+            data: {
+                    errorMessage: "An error occurred and your surf spot could not be saved"
+                  }
+          }); 
       }
         
       console.log("New surf spot %s saved".cyan, surfSpot.name); 
