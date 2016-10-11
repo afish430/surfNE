@@ -7,15 +7,15 @@
       <tbody>
        <tr>
           <th width="200">User Name: </th>
-          <td><input type="text" name="userName" required></td>
+          <td><input pattern=".{6,}" type="text" name="userName" required placeholder="(6+ characters, letters & numbers only)" {{#if data.userName}}value="{{data.userName}}"{{/if}}></td>
        </tr>
         <tr>
           <th>Password: </th>
-          <td><input type="password" name="password" required></td>
+          <td><input pattern=".{6,}" type="password" name="password" required placeholder="(6+ characters, with a letter, #, & special character)"></td>
         </tr>
         <tr>
           <th>Confirm Password: </th>
-          <td><input type="password" name="password2" required></td>
+          <td><input pattern=".{6,}" type="password" name="password2" required placeholder="Must match above"></td>
         </tr>
       </tbody>
 

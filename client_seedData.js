@@ -88,14 +88,14 @@ connection.on("open", function(){
 
 	user = new User({
 		userName: 'BigKahuna',
-		password: 'tubular',
+		password: 'tubular77!',
 		isAdmin: true
 	}); 
 	user.save();
 
 	user = new User({
 		userName: 'Bodie99',
-		password: 'gnarly',
+		password: 'gnarly99!',
 		isAdmin: false
 	}); 
 	user.save(function(err) {

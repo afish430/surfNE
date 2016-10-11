@@ -24,7 +24,6 @@ module.exports =
         if(user) {
           user.comparePassword(req.body.password, function(err, isMatch) {
             if (err) throw err;
-            console.log(user.password, isMatch); 
             if(isMatch){
               //add to session
               req.session.user = user;
