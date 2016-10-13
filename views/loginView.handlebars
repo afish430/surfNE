@@ -19,6 +19,7 @@
         <tr>
           <td></td>
           <td>
+           {{#if data.fromId}}<input type="hidden" name="fromId" value="{{data.fromId}}">{{/if}}
            <input type="submit" value="Login" class="btn btn-success">
            <input type="button" value="Cancel" class="btn btn-default" onclick="cancelAdd()">
           </td>

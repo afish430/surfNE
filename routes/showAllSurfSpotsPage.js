@@ -14,8 +14,14 @@ module.exports =
       	return {
       		id: surfSpot._id,
           name: surfSpot.name,
-          location: surfSpot.town + ", " + surfSpot.state
+          location: surfSpot.town + ", " + surfSpot.state,
+          latitude: surfSpot.latitude
       	}
+      });
+
+      //sort north to south
+      results.sort(function(a, b) {
+          return parseFloat(b.latitude) - parseFloat(a.latitude);
       });
 
       res.render('allSurfSpotsView',

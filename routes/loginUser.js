@@ -28,7 +28,12 @@ module.exports =
               //add to session
               req.session.user = user;
               console.log("Logged in user %s".cyan, user.userName); 
-              res.redirect('/surfspots');
+              if (req.body.fromId){
+                res.redirect('/surfspots/info/' + req.body.fromId); //send back to info page where user hit Log In from
+              }
+              else {
+                res.redirect('/surfspots');
+              }          
             }
             else {
               showInvalidLogin();

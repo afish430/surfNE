@@ -52,7 +52,7 @@ a:hover {
 
 h2 {
 	padding-top: 10px;
-	font-size: 25px;
+	font-size: 27px;
 	text-align: center;
 }
 
@@ -61,6 +61,10 @@ p.intro {
     width: 650px;
     margin: 10px auto;
     font-style: italic;
+}
+
+#allSurfSpotsTable th {
+	font-size: 18px;
 }
 
 .editTable input[type="text"], .editTable input[type="password"], .editTable input[type="number"], .editTable textarea {
