@@ -42,7 +42,7 @@ module.exports =
           }
           io.sockets.emit('new-comment', { data: 'a comment was added'}); //emit so page refreshes for all clients
           console.log("New comment saved".cyan); 
-          res.redirect('back');
+          res.redirect('/surfspots/info/' + fields.spotId + '#commentForm');
         });
       }
     });

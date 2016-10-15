@@ -14,7 +14,7 @@
       <tbody>
 
         <tr>
-          <th width="200">Name: </th>
+          <th width="180">Name: </th>
           <td>{{data.name}}</td>
         </tr>
         <tr>
@@ -39,6 +39,21 @@
           <td><a href="{{data.surfShopLink}}" target="blank">{{data.surfShopLink}}</a></td>
         </tr>
         {{/if}}
+        <tr>
+          <th>Today's Conditions: </th>
+          <td>
+            <table id="conditionsTable" class="table">
+              <tr>
+                <th>Time</th>
+                <th>Swell Height</th>
+                <th>Swell Period</th>
+                <th>Water Temp</th>
+                <th>Wind Speed</th>
+                <th>Wind Direction</th>
+              </tr>
+            </table>
+          </td>
+        </tr>
         <tr>
           <th>Surf Reports: </th>
           <td>

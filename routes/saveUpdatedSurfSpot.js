@@ -55,7 +55,7 @@ module.exports =
           }
             
           console.log("Updated surf spot %s saved".cyan, surfSpot.name);
-          res.redirect('/surfspots');
+          res.redirect('/surfspots/info/' + surfSpot._id);
         });
 
     });
