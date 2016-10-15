@@ -29,8 +29,8 @@ module.exports =
                     surfShopLink: surfSpot.surfShopLink,
                     surflineLink: surfSpot.surflineLink,
                     mswLink: surfSpot.mswLink,
-                    swellInfoLink: surfSpot.swellInfoLink,
-                    msw_id: surfSpot.msw_id
+                    swellInfoLink: surfSpot.swellInfoLink
+                    //msw_id: surfSpot.msw_id
                   }
           });                
     });

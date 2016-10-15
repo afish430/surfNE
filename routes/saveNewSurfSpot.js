@@ -16,8 +16,8 @@ module.exports =
         surfShopLink: req.body.surfShopLink,
         surflineLink: req.body.surflineLink,
         mswLink: req.body.mswLink,
-        swellInfoLink: req.body.swellInfoLink,
-        msw_id: req.body.msw_id
+        swellInfoLink: req.body.swellInfoLink
+        //msw_id: req.body.msw_id
       }); 
  
     surfSpot.save(function (err){

@@ -16,8 +16,8 @@ var surfSpotSchema = new Schema({
 	surfShopLink: String,
 	surflineLink: String,
 	mswLink: String,
-	swellInfoLink: String,
-	msw_id: Number
+	swellInfoLink: String
+	//msw_id: Number
 });
 
 var commentSchema = new Schema({

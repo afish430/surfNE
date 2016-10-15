@@ -47,7 +47,7 @@ module.exports =
                     surflineLink: surfSpot.surflineLink,
                     mswLink: surfSpot.mswLink,
                     swellInfoLink: surfSpot.swellInfoLink,
-                    msw_id: surfSpot.msw_id,
+                    //msw_id: surfSpot.msw_id,
                     hasComments: commentsArray.length > 0,
                     comments: commentsArray
                   }

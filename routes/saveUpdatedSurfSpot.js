@@ -27,7 +27,7 @@ module.exports =
       surfSpot.surflineLink = req.body.surflineLink;
       surfSpot.mswLink = req.body.mswLink;
       surfSpot.swellInfoLink = req.body.swellInfoLink;
-      surfSpot.msw_id = req.body.msw_id;
+      //surfSpot.msw_id = req.body.msw_id;
         
       surfSpot.save(function (err) {
           if (err){
@@ -48,8 +48,8 @@ module.exports =
                       surfShopLink: surfSpot.surfShopLink,
                       surflineLink: surfSpot.surflineLink,
                       mswLink: surfSpot.mswLink,
-                      swellInfoLink: surfSpot.swellInfoLink,
-                      msw_id: surfSpot.msw_id
+                      swellInfoLink: surfSpot.swellInfoLink
+                      //msw_id: surfSpot.msw_id
                     }
             }); 
           }

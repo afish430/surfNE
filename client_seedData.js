@@ -26,8 +26,8 @@ connection.on("open", function(){
 		surfShopLink: 'http://www.liquiddreamssurf.com/',
 		surflineLink: 'http://www.surfline.com/surf-report/york-beach-new-england_5106/',
 		mswLink: 'http://magicseaweed.com/Long-Sands-Surf-Report/367/',
-		swellInfoLink: '',
-		msw_id: 367
+		swellInfoLink: ''
+		//msw_id: 367
 	}); 
 	surfSpot.save();
 
@@ -42,8 +42,8 @@ connection.on("open", function(){
 		surfShopLink: 'https://cinnamonrainbows.com/',
 		surflineLink: 'http://www.surfline.com/surf-report/the-wall-new-england_5130/',
 		mswLink: 'http://magicseaweed.com/The-Wall-Surf-Report/369/',
-		swellInfoLink: 'http://www.swellinfo.com/surf-forecast/hampton-new-hampshire',
-		msw_id: 369
+		swellInfoLink: 'http://www.swellinfo.com/surf-forecast/hampton-new-hampshire'
+		//msw_id: 369
 	}); 
 	surfSpot.save();
 
@@ -58,8 +58,8 @@ connection.on("open", function(){
 		surfShopLink: 'http://pumphousesurf.com/',
 		surflineLink: 'http://www.surfline.com/surf-report/nauset-beach-new-england_108230/',
 		mswLink: 'http://magicseaweed.com/Cape-Cod-Surf-Report/373/',
-		swellInfoLink: 'http://www.swellinfo.com/surfreport/nauset-beach-cam',
-		msw_id: 373
+		swellInfoLink: 'http://www.swellinfo.com/surfreport/nauset-beach-cam'
+		//msw_id: 373
 	}); 
 	surfSpot.save();
 
@@ -74,12 +74,15 @@ connection.on("open", function(){
 		surfShopLink: 'http://www.islandsurfandsport.com/',
 		surflineLink: 'http://www.surfline.com/surf-report/first-beach-new-england_5111/',
 		mswLink: 'http://magicseaweed.com/1st-Beach-Eastons-Beach-Surf-Report/907/',
-		swellInfoLink: 'http://www.swellinfo.com/surf-forecast/newport-rhode-island',
-		msw_id: 907
+		swellInfoLink: 'http://www.swellinfo.com/surf-forecast/newport-rhode-island'
+		//msw_id: 907
 	}); 
 	surfSpot.save(function(err) {
 		connection.close();
-		if (err) throw err;
+		if (err) {
+			console.log(err);
+			throw err;
+		}
 		console.log("Success! Surf spot data has been seeded.".green);
 	});
 
@@ -100,7 +103,10 @@ connection.on("open", function(){
 	}); 
 	user.save(function(err) {
 		connection.close();
-		if (err) throw err;
+		if (err) {
+			console.log(err);
+			throw err;
+		}
 		console.log("Success! User data has been seeded.".green);
 	});
 	
